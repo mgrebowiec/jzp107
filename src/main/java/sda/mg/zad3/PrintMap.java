@@ -57,6 +57,8 @@ public class PrintMap {
     private static void printMapUsingStream(Map<String, Integer> input) {
         String msg = input.entrySet().stream()
                 .map(mapEntry -> "Klucz: " + mapEntry.getKey() + ", Wartosc: " + mapEntry.getValue())
+                .filter(txt -> txt.contains("a"))
+//                .map(txt -> txt.indexOf("a"))
                 .collect(Collectors.joining(",\n", "", "."));
         System.out.println(msg);
 
